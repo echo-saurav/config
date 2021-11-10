@@ -1,0 +1,23 @@
+" Special
+let wallpaper  = "/mnt/hdd/ironman/wallpapers/8a5c88a3c6ccf69177593c0fe9a20a951df99b3fcb7e68260bfc4d6a948c75793d2e.png"
+let background = "#0e1011"
+let foreground = "#c7c8c8"
+let cursor     = "#c7c8c8"
+
+" Colors
+let color0  = "#0e1011"
+let color1  = "#5C5E5F"
+let color2  = "#AB1C1D"
+let color3  = "#19678C"
+let color4  = "#19688D"
+let color5  = "#7D7F80"
+let color6  = "#7F8081"
+let color7  = "#c7c8c8"
+let color8  = "#8b8c8c"
+let color9  = "#5C5E5F"
+let color10 = "#AB1C1D"
+let color11 = "#19678C"
+let color12 = "#19688D"
+let color13 = "#7D7F80"
+let color14 = "#7F8081"
+let color15 = "#c7c8c8"
