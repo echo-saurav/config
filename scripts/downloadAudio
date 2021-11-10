@@ -1,0 +1,5 @@
+#!/bin/bash
+
+notify-send "start downloading audio" $1
+cd $audioDownloadDir
+youtube-dl --extract-audio --audio-format mp3  $1 ; notify-send "download completed!" "check $audioDownloadDir"

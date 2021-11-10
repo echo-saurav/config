@@ -1,0 +1,4 @@
+#!/bin/bash
+source $HOME/.cache/wal/colors.sh
+i3-dmenu-desktop --dmenu="dmenu -i -nf $foreground -nb $background -sb $color3 -fn Victor:bold:size=10 -b"
+

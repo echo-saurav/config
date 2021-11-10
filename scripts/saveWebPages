@@ -1,0 +1,49 @@
+#!/usr/bin/python
+import requests
+from bs4 import BeautifulSoup
+from readabilipy import simple_json_from_html_string
+import sys
+import os
+
+# variables
+webpagesDir = os.environ["webpagesDir"]
+url = sys.argv[1]
+
+# create file in the specified folder
+def create_new_file(fileName,content):
+    with open(webpagesDir+fileName,'w') as the_file :
+            the_file.write(content)
+ 
+
+if "webpagesDir" in os.environ and url != None :
+    response =requests.get(url)
+    doc = simple_json_from_html_string(response.text, use_readability=True) 
+    
+    if doc["title"] != None:
+        print("Making content readable")
+        fileName = doc["title"]+".md"
+        fileName = fileName.replace("/"," ")
+        pretty_html = BeautifulSoup(doc["content"], 'html.parser')  
+        new_file_content = "[View Original]({}) #webpage \n\n{}".format(url,pretty_html) 
+        create_new_file(fileName,new_file_content)
+    
+    else:
+        print("Article can not be saved!")
+
+    # Remove script and style tag and save page
+    # Mostly it can't scrap any information whatsoever so i removed this
+    # else: # if no title found means this is not readabilipy
+        # print("can't make content readable, downloading whole html")
+        # fileName = str(time.time())+".md"
+        # pretty_html = BeautifulSoup(response.text, 'html.parser')  
+        
+        # # kill all script and style elements
+        # for script in pretty_html(["script", "style"]):
+            # script.decompose()    #rip it out
+        
+        # new_file_content = "[View Original]({}) \n\n{}".format(url,pretty_html) 
+        # create_new_file(fileName,new_file_content)
+else:
+    print("Please add webpagesDir to environment variable\nAnd provide a url as args")
+
+

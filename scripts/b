@@ -1,0 +1,8 @@
+echo "# start window manager
+exec bspwm
+export _JAVA_AWT_WM_NONREPARENTING=1
+"> $HOME/.xinitrc
+
+
+#echo 'exec startplasma-x11' > $HOME/.xinitrc
+startx

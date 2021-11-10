@@ -1,0 +1,8 @@
+[Unit]
+Description=Runs to check high use of RAM
+
+[Service]
+ExecStart=/bin/bash -c "while true; do /home/ironman/scripts/checkMemory.sh; sleep 10; done"
+
+[Install]
+WantedBy=default.target

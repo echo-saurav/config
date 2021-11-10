@@ -1,0 +1,44 @@
+#!/bin/bash
+
+source $HOME/.cache/wal/colors.sh  
+
+hex2rgb() {
+    hex=$(echo "${1^^}" | sed 's/#//g')
+
+    a=$(echo $hex | cut -c-2)
+    b=$(echo $hex | cut -c3-4)
+    c=$(echo $hex | cut -c5-6)
+
+    r=$(echo "ibase=16; $a" | bc)
+    g=$(echo "ibase=16; $b" | bc)
+    b=$(echo "ibase=16; $c" | bc)
+
+    # echo ${1^^}
+    echo $r $g $b
+    annemone single $r $g $b
+
+}
+
+percent="+0"
+
+hex2(){
+    hex=${1:1}
+    r=$(printf "%d" 0x${hex:0:2}) 
+    g=$(printf "%d" 0x${hex:2:2})
+    b=$(printf "%d" 0x${hex:4:2})
+    echo "original color: $r $g $b"
+
+
+    r=$( echo "((100$percent) *$r) /100" |bc )
+    g=$( echo "((100$percent) *$g) /100" |bc )
+    b=$( echo "((100$percent) *$b) /100" |bc )
+    
+    echo "new color: $r $g $b"
+    annemone single $r $g $b
+
+}
+
+# notify-send "Changing keyboard color as wallpaper " $color2
+# hex2rgb $color12
+hex2 $color12
+

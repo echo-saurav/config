@@ -1,0 +1,26 @@
+get window list	=xprop |awk '/WM_CLASS/{print $4}'
+python local server	=python -m http.server 8080
+send file over ssh =scp -p 8022 user@192.168.0.100:img.jpg .
+get file over ssh =ssh -p 8022 user@192.168.0.100 "cat /data/data/com.termux/files/home/img.jpg" > .
+get 1st line of file=head -1 file
+all line except 1st line=tail -n +2 file
+last 2 line =tail -2 file
+automatic keyboard input =xdotool key up
+stop program =xkill
+copy text to clipboard =echo copiedtext |  xclip -selection "clipboard" 
+show git graph =git log --all --decorate --oneline --graph
+extract iso file =dd bs=4M if=./iso/linux.iso of=/dev/sdc status=progress && sync
+get kde connected device =kdeconnect-cli -l --id-only
+vnc server for ssh desktop =vncserver -interface 192.168.0.1:5901
+android debug keystore =keytool -list -alias androiddebugkey -keystore ~/.android/debug.keystore -storepass android -keypass android
+add new user with home dir and add to wheel group =sudo usermod -aG wheel username
+data time command =date '+%d-%m-%Y %I:%M %a'
+timestamp =date +%s
+get mirror list arch =reflector -c Bangladesh -f 12 -l 10 -n 12 --save file
+convert to jpg to png =convert sky.jpg sky.png
+resize image =convert platform.jpg -resize 100x50 platform.png
+get file/dir size =du -sh file
+repeats the previous command =!!
+sort by file size =du -sh /var/x | sort -h
+unzip tar.gz /usr/bin/tar -xf archive.tar.gz
+under git version /usr/bin/git ls-tree -r master --name-only

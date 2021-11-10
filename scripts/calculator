@@ -1,0 +1,4 @@
+#!/bin/bash
+
+rofi -show calc -modi "calc:qalc +u8 -nocurrencies" -theme ~/.cache/wal/colors-rofi-dark.rasi \
+ -font "Victor Mono bold 14" -width 30 -lines 2

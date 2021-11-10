@@ -1,0 +1,29 @@
+#!/bin/bash
+# get current colorshema
+source $HOME/.cache/wal/colors.sh
+
+# check if any args passed
+if [ ! $# -eq 0 ]
+then
+	description=$(echo " " | dmenu -b -p "Enter new bookmark: " -nf $foreground -nb $background -sb $color3 -fn "Victor:normal:size=12")
+	echo -n $description | ifne printf "\n- $description $1" >> $bookmarkFile
+	exit;
+fi
+
+# else show all the url in the vault
+cd $obsidianDir
+# exclude excalidraw and media dir
+output=$(grep -hr "https" $(ls -1 -I excalidraw -I media $obsidianDir |  xargs)  | dmenu -p "Obsidian Urls" -i -l 20  -nf $foreground -nb $background -sb $color3  -fn "Victor:normal:size=12" -b | grep -Eo   'https://[^ >]+' )
+
+echo output:  $output
+# check for mark down sentex at the end ')'
+if [ ${output: -1} = ")" ] 
+then
+	echo "${output::-1}"
+	xdg-open ${output::-1}
+else
+	echo "$output"
+	xdg-open $output
+fi
+
+

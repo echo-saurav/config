@@ -1,0 +1,6 @@
+#!/bin/bash
+
+url1="https://www.youtube.com/playlist?list=PLv2yDojCCtNatCmqqT-T6J9eCnB2CqyvS"
+
+cd $HOME/Movies/Youtube-dl
+youtube-dl --download-archive downloaded.txt --no-post-overwrites $url1

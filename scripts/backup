@@ -1,0 +1,17 @@
+#!/bin/bash
+
+REMOTE_DIR="drive:rclone"
+
+function startBackup(){
+	  echo srcDir $1 remoteDir $REMOTE_DIR/$2
+	  rclone sync "$1" "$REMOTE_DIR/$2" -P 
+}
+
+startBackup $HOME/Wallpapers wallpapers
+startBackup $HOME/Documents documents
+startBackup $HOME/Screenshots screenshots
+
+
+
+
+

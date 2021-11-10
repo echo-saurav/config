@@ -1,0 +1,5 @@
+#!/bin/bash
+
+i3-nagbar -m ""  -b "Poweroff" "systemctl poweroff -i" -b "Restart" "systemctl reboot"
+
+

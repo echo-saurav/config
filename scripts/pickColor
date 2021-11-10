@@ -1,0 +1,12 @@
+#!/bin/bash
+#notify-send "Choose color" "pick color with curser, color will be shown in bottom left"
+#colorpicker  --short --preview --one-shot | tr -d "\n" | xclip -selection "clipboard" \
+	#; notify-send "color picked" $(xclip -selection "clipboard" -o) ; exit 
+
+
+notify-send "Choose color" "pick color with curser, color will be shown in bottom left"
+xcolor |tr -d "\n" | xclip -selection "clipboard" \
+	; notify-send "color picked" $(xclip -selection "clipboard" -o) ; exit 
+
+
+

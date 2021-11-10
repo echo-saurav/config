@@ -1,0 +1,6 @@
+echo "# start window manager
+exec i3
+"> $HOME/.xinitrc
+
+startx
+

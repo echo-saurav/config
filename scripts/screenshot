@@ -1,0 +1,92 @@
+#!/bin/bash
+#used slop for better screenshot
+#https://github.com/naelstrof/slop
+
+# get current colorchema
+source $HOME/.cache/wal/colors.sh
+
+# Add inboxDir and mediaDir to as environment variable 
+# in zshrc.
+if ([ -n "$inboxDir" ] && [ -n "$mediaDir" ]); then
+	echo "Taking screenshot..."
+else
+	echo "check if inboxDir and mediaDir var exported"
+	exit 0;
+fi
+
+scriptPath=$0
+# Dir variables
+screenshotDir=$HOME/Screenshots
+memeDir=$HOME/Meme
+ideaDir=$HOME/IdeaImages
+menuOptions="1 Save screenshot\n\
+2 Obsidian inbox\n\
+3 Copy Text\n\
+4 Search on Google.com"
+
+
+function init(){
+	scrot -a $(slop -f '%x,%y,%w,%h') -e '$('$scriptPath' $f)'
+}
+
+function processInput(){
+	f=$1
+	echo "fille path: $f"
+	echo -e $menuOptions
+
+	userInput=$(echo -e $menuOptions | dmenu -i -l 6  -nf $foreground -nb $background -sb $color3  -fn "Victor Mono" -b )
+
+	case ${userInput:0:1} in
+		1)  # save as screenshot
+			mkdir -p $screenshotDir; mv $f $screenshotDir ;\ 
+				notify-send "Screenshot took!" $screenshotDir/$f -i $screenshotDir/$f;
+			;;
+		2)  # obsidian
+			takeNoteToObsidian
+			;;
+		3)  # Copy text
+			tesseract $f out ; sed -i '$d' out.txt ;
+			xclip  -selection "clipboard" -i out.txt ; 
+			notify-send "Copied To clipboard" "$(cat out.txt | tr -d '\n' )";
+			rm out.txt $f ;
+			;;
+		4)  # Search text on google.com
+			tesseract $f out ; sed -i '$d' out.txt ; 
+			xdg-open "https://www.google.com/search?q=$(cat out.txt |  tr -d '\n')" ;
+			rm out.txt $f ;
+			;;
+		*)  # if nothing selected
+			notify-send "Delete" "Nothing selected so deleting the screenshot"
+			rm $f
+			;;
+
+		esac
+	}
+
+
+function takeNoteToObsidian(){
+	
+	mkdir -p $mediaDir; mv $f $mediaDir;
+	userInput=$(echo "" | dmenu -i -p "Write something > " -nf $foreground -nb $background -sb $color3  -fn "Victor Mono" -b  )
+	
+	fileName=$(date +%s).md;
+	filePath="$inboxDir/$fileName";
+	touch "$filePath";
+	echo "new filepath: $filePath";
+
+	content="![[$f]]\n\n$userInput #inbox \n\n$(date '+%I:%M %p') [[$(date '+%d-%m-%Y')]]" ;
+	echo -e "content: $content";
+
+	echo -e $content > "$filePath";
+	# open file on obsidian
+	xdg-open "obsidian://advanced-uri?vault=KnowledgeVault&filepath=inbox%252F$fileName";
+
+}
+
+# check if there is any args, if not then just run init()
+if [ $# -eq 0 ]
+then
+	init
+else
+	processInput $1
+fi

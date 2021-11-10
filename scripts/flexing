@@ -1,0 +1,8 @@
+#!/bin/bash
+#konsole -e ranger	&
+#konsole -e htop		&
+#konsole -e cmatrix	&
+
+kitty ranger	&
+kitty htop		&
+kitty cmatrix	&

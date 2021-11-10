@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd $HOME/scripts
+#cat unicodeLarge \
+#| rofi -dmenu -i -theme ./rofi-emoji-theme.rasi -font "Victor Mono bold 17" -p "" -columns 10 -width 25 \
+#| ifne awk '{printf "%s", $1}'\
+#| xclip -selection clipboard && xdotool key ctrl+v
+
+
+
+cat unicodeLarge \
+| rofi -dmenu -i -theme ./rofi-emoji-theme.rasi -font "Victor Mono bold 12" -p "" \
+| ifne awk '{printf "%s", $1}'\
+| xclip -selection clipboard && xdotool key ctrl+v

@@ -185,8 +185,8 @@ for_window [floating] border normal
 
 
 # my keybindings
-bindsym --release $mod+c  exec --no-startup-id $HOME/scripts/colorPick.sh
-bindsym --release $mod+p  exec --no-startup-id $HOME/scripts/takeScreenshotWithRofi.sh
+bindsym --release $mod+c  exec --no-startup-id $HOME/scripts/pickColor
+bindsym --release $mod+p  exec --no-startup-id $HOME/scripts/screenshot
 bindsym $mod+Shift+Return exec --no-startup-id kitty --class floating_kitty
 bindsym $mod+Return exec  --no-startup-id kitty --class kitty
 bindsym $mod+f exec		  --no-startup-id thunar

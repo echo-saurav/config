@@ -1,0 +1,5 @@
+#!/bin/bash
+
+notify-send "start downloading video" $1
+cd $videoDownloadDir
+youtube-dl  $1 ; notify-send "download completed!" "check $videoDownloadDir"

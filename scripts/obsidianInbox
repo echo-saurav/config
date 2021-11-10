@@ -1,0 +1,12 @@
+#!/bin/zsh
+# get current colorshema
+source $HOME/.cache/wal/colors.sh
+
+userInput=$(echo "" | dmenu -b -p "Obsidian inbox: " -nf $foreground -nb $background -sb $color3  -fn "Victor:normal:size=12") ;
+content="$userInput #inbox\n$1\n\n$(date '+%I:%M %p') [[$(date '+%d-%m-%Y')]]";
+if [ ! -z $userInput  ]; then
+	echo "inserting $content"
+	printf "$content" >> "$inboxDir/$(date +%s).md";
+fi
+
+

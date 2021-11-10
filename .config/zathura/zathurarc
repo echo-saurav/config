@@ -1,0 +1,8 @@
+#!/bin/bash
+
+#set recolor true
+set recolor-darkcolor '$color1'
+set recolor-lightcolor '$color2'
+set window-title-basename "true"
+set selection-clipboard "clipboard"
+
