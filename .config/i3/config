@@ -1,0 +1,247 @@
+# set mod button as window key
+set $mod Mod4
+
+# pywal colors
+set_from_resource $c0 i3wm.color0 #f0f0f0
+set_from_resource $c1 i3wm.color1 #f0f0f0
+set_from_resource $c2 i3wm.color2 #f0f0f0
+set_from_resource $c3 i3wm.color3 #f0f0f0
+set_from_resource $c4 i3wm.color4 #f0f0f0
+set_from_resource $c5 i3wm.color5 #f0f0f0
+set_from_resource $c6 i3wm.color6 #f0f0f0
+set_from_resource $c7 i3wm.color7 #f0f0f0
+set_from_resource $c8 i3wm.color8 #f0f0f0
+set_from_resource $c9 i3wm.color9 #f0f0f0
+set_from_resource $c10 i3wm.color10 #f0f0f0
+set_from_resource $c11 i3wm.color11 #f0f0f0
+set_from_resource $c12 i3wm.color12 #f0f0f0
+set_from_resource $c13 i3wm.color13 #f0f0f0
+set_from_resource $c14 i3wm.color14 #f0f0f0
+set_from_resource $c15 i3wm.color15 #f0f0f0
+set_from_resource $backgr i3wm.background #f0f0f0
+set_from_resource $forgr i3wm.forground #f0f0f0
+
+
+# #class                border		backgr.		text		indicator child_border
+client.focused          $c3			$c3			$forgr		$c7       $c3
+client.urgent           $c2			$c7			$c0			$c7       $c2
+client.unfocused		#FF000000	#FF000000	#FF000000	#FF000000 #FF000000
+client.focused_inactive $backgr		$backgr		$forgr		$forgr	  #FF000000
+
+# _______________________________________________________________________________
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango: Victor Mono 8
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+q kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec --no-startup-id dmenu_run
+gaps inner 0
+#gaps outer 10
+
+font pango:Victor 10
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+
+# enter fullscreen mode for the focused container
+bindsym $mod+m fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+t layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+s floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Sticky window
+bindsym $mod+Shift+y sticky toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# switch to workspace
+bindsym $mod+Tab workspace number $ws1
+bindsym $mod+1 workspace number $ws2
+bindsym $mod+2 workspace number $ws3
+bindcode $mod+34 workspace number $ws4
+bindcode $mod+35 workspace number $ws5
+bindcode $mod+51 workspace number $ws6
+
+
+# move focused container to workspace
+bindsym $mod+Shift+Tab move container to workspace number $ws1
+bindsym $mod+Shift+1 move container to workspace number $ws2
+bindsym $mod+Shift+2 move container to workspace number $ws3
+bindcode $mod+Shift+34 move container to workspace number $ws4
+bindcode $mod+Shift+35 move container to workspace number $ws5
+bindcode $mod+Shift+51 move container to workspace number $ws6
+
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+	bindsym j resize shrink width 10 px or 10 ppt
+		bindsym k resize grow height 10 px or 10 ppt
+		bindsym l resize shrink height 10 px or 10 ppt
+		bindsym semicolon resize grow width 10 px or 10 ppt
+
+# same bindings, but for the arrow keys
+		bindsym Right resize shrink width 1 px or 1 ppt
+		bindsym Left  resize grow width 1 px or 1 ppt
+##
+		bindsym Up   resize grow height 1 px or 1 ppt
+		bindsym Down resize shrink height 1 px or 1 ppt
+
+# back to normal: Enter or Escape or $mod+r
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+		bindsym $mod+r mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+
+# my settings ________________________________________________________________
+focus_follows_mouse no
+#default_border pixel 3
+for_window [tiling] border pixel 2
+# floating window with normal border
+for_window [floating] border normal
+
+
+# my keybindings
+bindsym --release $mod+c  exec --no-startup-id $HOME/scripts/colorPick.sh
+bindsym --release $mod+p  exec --no-startup-id $HOME/scripts/takeScreenshotWithRofi.sh
+bindsym $mod+Shift+Return exec --no-startup-id kitty --class floating_kitty
+bindsym $mod+Return exec  --no-startup-id kitty --class kitty
+bindsym $mod+f exec		  --no-startup-id thunar
+bindsym $mod+equal exec	  --no-startup-id "pkill -SIGRTMIN+10 i3blocks; amixer set Master 5%+"
+bindsym $mod+minus exec   --no-startup-id "pkill -SIGRTMIN+10 i3blocks; amixer set Master 5%-"
+#bindsym $mod+x exec		  --no-startup-id $HOME/scripts/openRofi.sh
+bindsym $mod+x exec		  --no-startup-id $HOME/scripts/appluncher
+bindsym $mod+e exec		  --no-startup-id $HOME/scripts/insertEmoji
+bindsym $mod+b exec		  --no-startup-id $HOME/scripts/bookmark
+bindsym $mod+o exec		  --no-startup-id $HOME/scripts/obsidianInbox
+bindsym $mod+Shift+b exec --no-startup-id $HOME/scripts/bookmark " "
+
+
+# workspace
+#bindcode $mod+35 exec --no-startup-id i3-msg "workspace next_on_output"
+#bindcode $mod+34 exec --no-startup-id i3-msg "workspace prev_on_output"
+
+
+# startup programs
+exec --no-startup-id wal -i $(cat ~/.cache/wal/wal) -o ~/scripts/setWal.sh &
+exec --no-startup-id ~/.config/polybar/launch.sh &
+exec --no-startup-id /usr/lib/kdeconnectd &
+exec --no-startup-id dunst &
+exec --no-startup-id picom &
+exec --no-startup-id thunar --daemon &
+
+## Other servers
+exec --no-startup-id syncthing &
+## Activity Watcher
+exec --no-startup-id $HOME/scripts/activityWatcherStartup &
+## Screen off time
+## https://wiki.archlinux.org/title/Display_Power_Management_Signaling
+exec --no-startup-id xset -dpms &
+exec --no-startup-id xset s off &
+
+# Open in floating mode
+for_window [class="Thunar" instance="thunar"] floating enable,move position center
+for_window [class="Sxiv" instance="sxiv"] floating enable, move position center
+for_window [class="vlc" instance="vlc"] floating enable, move position center
+for_window [class="Leafpad" instance="leafpad"] floating enable, move position center
+for_window [class="Android Emulator" instance="Android Emulator"] floating enable, move position center
+# modified window
+for_window [class="floating_kitty"] floating enable,resize set 640px 480px,move position center
+# 40 percent kitty window
+# https://github.com/i3/i3/issues/2816
+for_window [class="kitty"] resize set 40ppt 40ppt
+
+# Specific workspace for programs
+assign [class="qutebrowser"]    $ws1
+assign [class="obsidian"]		$ws3
+
+# focus window when open and switch workspace if window is on other workspace
+#focus_on_window_activation focus
+
+focus_on_window_activation focus
+
+
+
