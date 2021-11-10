@@ -1,0 +1,24 @@
+~/.cache/wal/colors.xresources
+#makes it slow
+#URxvt.blurRadius:	3x3
+*.background: #282828
+*.foreground: white
+*.cursorColor: white
+#URxvt.font: xft: Victor Mono:regular:size=11
+URxvt.font: xft: Victor Mono:regular:size=10,xft:Noto Emoji:minspace=False
+URxvt.scrollBar:	false
+URxvt.depth:	16
+URxvt.cursorBlink:	true
+URxvt.transparent:	false
+URxvt.shading:		50	
+URxvt.intensityStyles:	true
+URxvt.cursorUnderline:	true
+URxvt.pointerBlank:	true
+URxvt.loginShell:	true
+URxvt.borderLess:	false
+URxvt.saveLines:	100000
+#URxvt.background:	#202328
+# change up down key
+URxvt.keysym.Shift-Up: command:\033]720;1\007
+URxvt.keysym.Shift-Down: command:\033]721;1\007
+URxvt.letterSpace: 0
