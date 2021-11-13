@@ -25,3 +25,4 @@ sort by file size =du -sh /var/x | sort -h
 unzip tar.gz /usr/bin/tar -xf archive.tar.gz
 under git version /usr/bin/git ls-tree -r master --name-only
 hello this =echo hello
+check if deviec / bluetooth exsit =sudo lsusb |grep Bluetooth
