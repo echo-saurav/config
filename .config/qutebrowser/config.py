@@ -38,6 +38,9 @@ c.colors.webpage.darkmode.algorithm="lightness-cielab"
 c.colors.webpage.darkmode.contrast=0.0
 c.colors.webpage.darkmode.policy.images="never"
 
+
+c.scrolling.smooth=True
+
 # pywal colorshema
 # https://github.com/andreyvpng/qutewal
 config.source('qutewal.py')
@@ -69,6 +72,6 @@ config.bind('sv', 'spawn --userscript downloadVideo {url}')
 config.bind('sa', 'spawn --userscript downloadAudio {url}')
 config.bind('sw', 'spawn --userscript saveWebPages  {url}')
 config.bind('sb', 'spawn --userscript bookmark      {url}')
-config.bind('h', 'open -t file:///home/ironman/packages/root-startpage/index.html')
+config.bind('h' , 'open -t file:///home/ironman/packages/root-startpage/index.html')
 
 os.environ['QT_QPA_PLATFORMTHEME'] = 'kde'

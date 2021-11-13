@@ -1,28 +1,28 @@
 {
-    "wallpaper": "/mnt/hdd/ironman/wallpapers/8a5c88a3c6ccf69177593c0fe9a20a951df99b3fcb7e68260bfc4d6a948c75793d2e.png",
+    "wallpaper": "/mnt/hdd/ironman/wallpapers/wallhaven-e7xw6w.png",
     "alpha": "100",
 
     "special": {
-        "background": "#0e1011",
-        "foreground": "#c7c8c8",
-        "cursor": "#c7c8c8"
+        "background": "#001C2D",
+        "foreground": "#c99d8a",
+        "cursor": "#c99d8a"
     },
     "colors": {
-        "color0": "#0e1011",
-        "color1": "#5C5E5F",
-        "color2": "#AB1C1D",
-        "color3": "#19678C",
-        "color4": "#19688D",
-        "color5": "#7D7F80",
-        "color6": "#7F8081",
-        "color7": "#c7c8c8",
-        "color8": "#8b8c8c",
-        "color9": "#5C5E5F",
-        "color10": "#AB1C1D",
-        "color11": "#19678C",
-        "color12": "#19688D",
-        "color13": "#7D7F80",
-        "color14": "#7F8081",
-        "color15": "#c7c8c8"
+        "color0": "#001C2D",
+        "color1": "#662A40",
+        "color2": "#863C32",
+        "color3": "#905017",
+        "color4": "#AA5A12",
+        "color5": "#BB610E",
+        "color6": "#96442C",
+        "color7": "#c99d8a",
+        "color8": "#8c6d60",
+        "color9": "#662A40",
+        "color10": "#863C32",
+        "color11": "#905017",
+        "color12": "#AA5A12",
+        "color13": "#BB610E",
+        "color14": "#96442C",
+        "color15": "#c99d8a"
     }
 }

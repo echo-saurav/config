@@ -79,7 +79,8 @@ function takeNoteToObsidian(){
 
 	echo -e $content > "$filePath";
 	# open file on obsidian
-	xdg-open "obsidian://advanced-uri?vault=KnowledgeVault&filepath=inbox%252F$fileName";
+	#xdg-open "obsidian://advanced-uri?vault=KnowledgeVault&filepath=inbox%252F$fileName";
+	notify-send "Obsidian" "Note Saved $userInput"
 
 }
 

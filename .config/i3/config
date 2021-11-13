@@ -232,7 +232,7 @@ for_window [class="Android Emulator" instance="Android Emulator"] floating enabl
 for_window [class="floating_kitty"] floating enable,resize set 640px 480px,move position center
 # 40 percent kitty window
 # https://github.com/i3/i3/issues/2816
-for_window [class="kitty"] resize set 40ppt 40ppt
+#for_window [class="kitty"] resize set 40ppt 40ppt
 
 # Specific workspace for programs
 assign [class="qutebrowser"]    $ws1
