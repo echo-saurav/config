@@ -10,6 +10,12 @@ function startBackup(){
 startBackup $HOME/Wallpapers wallpapers
 startBackup $HOME/Documents documents
 startBackup $HOME/Screenshots screenshots
+startBackup $HOME/Downloads downloads
+startBackup $HOME/MobileStorage mobileStorage
+startBackup $HOME/MobileDownload mobilDownloads
+startBackup $HOME/DCIM dcim
+
+
 
 
 

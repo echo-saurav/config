@@ -199,6 +199,41 @@ bindsym $mod+b exec		  --no-startup-id $HOME/scripts/bookmark
 bindsym $mod+o exec		  --no-startup-id $HOME/scripts/obsidianInbox
 bindsym $mod+Shift+b exec --no-startup-id $HOME/scripts/bookmark " "
 
+# mouse movement
+mode "mouse" {
+# mouse movement keybindings
+bindsym a exec $HOME/scripts/mousemovement -left
+bindsym d exec $HOME/scripts/mousemovement -right
+bindsym w exec $HOME/scripts/mousemovement -up
+bindsym s exec $HOME/scripts/mousemovement -down
+
+# double axis movement
+bindsym z exec $HOME/scripts/mousemovement -down-left
+bindsym c exec $HOME/scripts/mousemovement -down-right
+bindsym e exec $HOME/scripts/mousemovement -up-right
+bindsym q exec $HOME/scripts/mousemovement -up-left
+
+# slow movement
+bindsym Up		exec $HOME/scripts/mousemovement -up -slow
+bindsym Down	exec $HOME/scripts/mousemovement -down -slow
+bindsym Left	exec $HOME/scripts/mousemovement -left -slow
+bindsym Right	exec $HOME/scripts/mousemovement -right -slow
+
+# buton click
+bindsym i		exec $HOME/scripts/mousemovement -left-click
+bindsym p		exec $HOME/scripts/mousemovement -right-click
+bindsym o		exec $HOME/scripts/mousemovement -middle-click
+bindsym $mod+w	exec $HOME/scripts/mousemovement -scroll-up
+bindsym $mod+s	exec $HOME/scripts/mousemovement -scroll-down
+
+# back to normal: Enter or Escape or $mod+r
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+		bindsym $mod+r mode "default"
+}
+
+bindcode $mod+22 mode "mouse"
+
 
 # workspace
 #bindcode $mod+35 exec --no-startup-id i3-msg "workspace next_on_output"
@@ -232,7 +267,7 @@ for_window [class="Android Emulator" instance="Android Emulator"] floating enabl
 for_window [class="floating_kitty"] floating enable,resize set 640px 480px,move position center
 # 40 percent kitty window
 # https://github.com/i3/i3/issues/2816
-for_window [class="kitty"] resize set 40ppt 40ppt
+#for_window [class="kitty"] resize set 40ppt 40ppt
 
 # Specific workspace for programs
 assign [class="qutebrowser"]    $ws1
