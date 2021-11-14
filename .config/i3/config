@@ -254,6 +254,11 @@ exec --no-startup-id thunar --daemon &
 exec --no-startup-id syncthing &
 ## Activity Watcher
 exec --no-startup-id $HOME/scripts/activityWatcherStartup &
+# backing up all the files
+exec --no-startup-id $HOME/scripts/backup
+# sync youtube video and audio playlist
+exec --no-startup-id $HOME/scripts/syncYoutubePlaylist
+
 ## Screen off time
 ## https://wiki.archlinux.org/title/Display_Power_Management_Signaling
 exec --no-startup-id xset -dpms &
