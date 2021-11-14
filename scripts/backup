@@ -1,18 +1,26 @@
 #!/bin/bash
 
 REMOTE_DIR="drive:rclone"
+REMOTE_DIR_2="drive:echoGdrive"
 
 function startBackup(){
 	  echo srcDir $1 remoteDir $REMOTE_DIR/$2
 	  rclone sync "$1" "$REMOTE_DIR/$2" -P 
 }
 
-startBackup $HOME/Wallpapers wallpapers
-startBackup $HOME/Documents documents
-startBackup $HOME/Screenshots screenshots
-startBackup $HOME/Downloads downloads
-startBackup $HOME/MobileStorage mobileStorage
-startBackup $HOME/MobileDownload mobilDownloads
-startBackup $HOME/DCIM dcim
+function startBackup2(){
+	  echo srcDir $1 remoteDir $REMOTE_DIR/$2
+	  rclone sync "$1" "$REMOTE_DIR/$2" -P 
+}
 
+# old google account
+#startBackup $HOME/Wallpapers wallpapers
+#startBackup $HOME/Documents documents
+#startBackup $HOME/Screenshots screenshots
+#startBackup $HOME/Downloads downloads
+#startBackup $HOME/MobileStorage mobileStorage
+#startBackup $HOME/MobileDownload mobilDownloads
+#startBackup $HOME/DCIM dcim
 
+# another google account
+startBackup2 $HOME/KnowledgeVault KnowledgeVault
