@@ -41,9 +41,6 @@ c.colors.webpage.darkmode.policy.images="never"
 
 c.scrolling.smooth=True
 
-# pywal colorshema
-# https://github.com/andreyvpng/qutewal
-config.source('qutewal.py')
 
 c.hints.leave_on_load = False
 
@@ -75,3 +72,7 @@ config.bind('sb', 'spawn --userscript bookmark      {url}')
 config.bind('h' , 'open -t file:///home/ironman/packages/root-startpage/index.html')
 
 os.environ['QT_QPA_PLATFORMTHEME'] = 'kde'
+
+# pywal colorshema
+# https://github.com/andreyvpng/qutewal
+config.source('qutewal.py')
