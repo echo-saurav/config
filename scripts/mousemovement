@@ -1,0 +1,79 @@
+#!/bin/bash
+
+move=30
+
+# set velocity
+if [[ $2 = "-slow" ]]
+then
+	move=10
+fi	
+
+# move mouse 
+if [[ $1 = "-up" ]]
+then
+	echo going up
+	xdotool mousemove_relative --sync -- 0  -$move
+elif [[ $1 = "-down" ]]
+then
+	echo going down
+	xdotool mousemove_relative --sync -- 0  $move
+elif [[ $1 = "-left" ]]
+then
+	echo going left
+	xdotool mousemove_relative --sync -- -$move  0
+
+elif [[ $1 = "-right" ]]
+then
+	echo going right
+	xdotool mousemove_relative --sync -- $move  0
+	
+# double axis movement
+
+elif [[ $1 = "-down-left" ]]
+then
+	echo going down
+	xdotool mousemove_relative --sync -- -$move  $move
+elif [[ $1 = "-down-right" ]]
+then
+	echo going left
+	xdotool mousemove_relative --sync -- $move  $move
+
+elif [[ $1 = "-up-right" ]]
+then
+	echo going right
+	xdotool mousemove_relative --sync -- $move  -$move
+
+elif [[ $1 = "-up-left" ]]
+then
+	echo going right
+	xdotool mousemove_relative --sync -- -$move  -$move
+
+# mouse button click
+elif [[ $1 = "-left-click" ]]
+then
+	echo left click
+	xdotool click  1;
+
+elif [[ $1 = "-right-click" ]]
+then
+	echo right click
+	xdotool click  3;
+
+elif [[ $1 = "-middle-click" ]]
+then
+	echo middle click
+	xdotool click  2;
+
+elif [[ $1 = "-scroll-up" ]]
+then
+	echo scroll up
+	xdotool click 4;
+
+elif [[ $1 = "-scroll-down" ]]
+then
+	echo scroll down
+	xdotool click 5
+fi	
+
+	
+
