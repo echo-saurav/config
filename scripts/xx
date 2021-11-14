@@ -1,0 +1,9 @@
+#!/bin/bash
+# check if any args passed
+if [ ! $# -eq 0 ]
+then
+	echo $@ >> $HOME/scripts/commands
+
+else
+	cat $HOME/scripts/commands| fzf | cut -d "=" -f2 |  xclip -selection "clipboard" | echo "copy command to clipboard"
+fi
