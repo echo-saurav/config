@@ -1,0 +1,38 @@
+#!/bin/bash
+
+# current brightness value, dont change this line,
+# it needs to be on line 5
+current=1.0
+changeby=.1
+smallest=.3
+biggest=1
+
+# Check connected monitor
+# xrandr -q | grep " connected" 
+
+if [[ $1 = "+" ]]
+then
+	new_brightness=$(echo $current + $changeby | bc -l) 
+	# check
+	if (( $(echo "$new_brightness > $biggest" | bc -l ) ));then
+		echo "$new_brightness:can't have more then $biggest brightness";
+		exit;
+	fi
+
+elif [[ $1 = "-" ]]
+then	
+	new_brightness=$(echo $current - $changeby | bc -l) 
+	# check
+	if (( $(echo "$new_brightness < $smallest" | bc -l ) ));then
+		echo "$new_brightness:can't have less then $smallest brightness";
+		exit;
+	fi
+fi	
+# increase brightness
+xrandr --output VGA-1 --brightness $new_brightness
+echo $new_brightness 
+
+# change current value
+sedcommand="5s/.*/current=$new_brightness/"
+sed -i $sedcommand $0
+
