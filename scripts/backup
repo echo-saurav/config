@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REMOTE_DIR="drive:rclone"
-REMOTE_DIR_2="drive:echoGdrive"
+REMOTE_DIR_2="echoGdrive:rclone"
 
 function startBackup(){
 	  echo srcDir $1 remoteDir $REMOTE_DIR/$2
@@ -10,7 +10,7 @@ function startBackup(){
 
 function startBackup2(){
 	  echo srcDir $1 remoteDir $REMOTE_DIR/$2
-	  rclone sync "$1" "$REMOTE_DIR/$2" -P 
+	  rclone sync "$1" "$REMOTE_DIR_2/$2" -P 
 }
 
 # old google account
