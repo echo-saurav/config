@@ -16,8 +16,3 @@ startBackup $HOME/MobileDownload mobilDownloads
 startBackup $HOME/DCIM dcim
 
 
-
-
-
-
-
