@@ -190,6 +190,8 @@ bindsym --release $mod+p  exec --no-startup-id $HOME/scripts/screenshot
 bindsym $mod+Shift+Return exec --no-startup-id kitty --class floating_kitty
 bindsym $mod+Return exec  --no-startup-id kitty --class kitty
 bindsym $mod+f exec		  --no-startup-id thunar
+bindsym $mod+Shift+equal exec	  --no-startup-id "$HOME/scripts/brightness +"
+bindsym $mod+Shift+minus exec	  --no-startup-id "$HOME/scripts/brightness -"
 bindsym $mod+equal exec	  --no-startup-id "pkill -SIGRTMIN+10 i3blocks; amixer set Master 5%+"
 bindsym $mod+minus exec   --no-startup-id "pkill -SIGRTMIN+10 i3blocks; amixer set Master 5%-"
 #bindsym $mod+x exec		  --no-startup-id $HOME/scripts/openRofi.sh
