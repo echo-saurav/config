@@ -23,4 +23,5 @@ startBackup $HOME/MobileDownload mobilDownloads
 startBackup $HOME/DCIM dcim
 
 # another google account
-startBackup2 $HOME/KnowledgeVault KnowledgeVault
+startBackup2 $HOME/ObsidianVault obsidianVault
+startBackup2 $HOME/Musics music
