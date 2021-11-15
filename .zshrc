@@ -167,6 +167,11 @@ abbr bs="vim ~/.config/bspwm/bspwmrc"
 abbr sx="vim ~/.config/sxhkd/sxhkdrc"
 abbr sc="~/scripts"
 
+# ibus setup
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
 # start gui after login_______________________________________
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
 	echo "Starting gui in 3sec..."
