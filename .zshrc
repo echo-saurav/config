@@ -46,7 +46,6 @@ function = () {
 
 # add color globally colors
 source $HOME/.cache/wal/colors.sh
-cat ~/.cache/wal/sequences
 
 # prompt
 #PS1="%S %~ $(parse_git_branch) > %s "
