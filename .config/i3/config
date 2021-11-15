@@ -258,6 +258,9 @@ exec --no-startup-id $HOME/scripts/activityWatcherStartup &
 exec --no-startup-id $HOME/scripts/backup
 # sync youtube video and audio playlist
 exec --no-startup-id $HOME/scripts/syncYoutubePlaylist
+# text input system
+# ibus setup
+exec --no-startup-id ibus-daemon -drxR
 
 ## Screen off time
 ## https://wiki.archlinux.org/title/Display_Power_Management_Signaling
