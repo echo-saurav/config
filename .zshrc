@@ -17,7 +17,7 @@ export documentDownloadDir="$HOME/Documents/"
 export downloadDir="$HOME/Downloads/"
 
 # obsidian vars
-export obsidianDir="$HOME/KnowledgeVault"
+export obsidianDir="$HOME/ObsidianVault"
 export webpagesDir="$obsidianDir/Webpages/"
 export mediaDir="$obsidianDir/media"
 export inboxDir="$obsidianDir/inbox"
