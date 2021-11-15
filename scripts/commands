@@ -27,3 +27,4 @@ under git version /usr/bin/git ls-tree -r master --name-only
 hello this =echo hello
 check if deviec / bluetooth exsit =sudo lsusb |grep Bluetooth
 check git remote =git config --get remote.origin.url
+clone minimal git repo without all the history =git clone --depth <depth> -b <branch> <repo_url>
