@@ -24,4 +24,4 @@ startBackup $HOME/DCIM dcim
 
 # another google account
 startBackup2 $HOME/ObsidianVault obsidianVault
-startBackup2 $HOME/Musics music
+#startBackup2 $HOME/Musics music

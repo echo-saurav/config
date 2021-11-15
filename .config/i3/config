@@ -261,6 +261,8 @@ exec --no-startup-id $HOME/scripts/syncYoutubePlaylist
 # text input system
 # ibus setup
 exec --no-startup-id ibus-daemon -drxR
+# music player daemon
+exec --no-startup-id mpd
 
 ## Screen off time
 ## https://wiki.archlinux.org/title/Display_Power_Management_Signaling

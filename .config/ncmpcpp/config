@@ -18,6 +18,7 @@ ncmpcpp_directory = ~/.ncmpcpp
 ## MPD clients (eg. ncmpc) also use that location.
 ##
 #
+lyrics_directory = ~/ObsidianVault/Lyrics
 #lyrics_directory = ~/.lyrics
 #
 ##### connection settings #####
@@ -38,7 +39,7 @@ visualizer_in_stereo = "yes"
 visualizer_type = "spectrum"
 visualizer_look = "$#"
 #
-#mpd_crossfade_time = 5
+mpd_crossfade_time = 5
 #
 ##### music visualizer #####
 ##
@@ -276,7 +277,7 @@ visualizer_look = "$#"
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-#execute_on_song_change = ""
+execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"
 #
 ##
 ## Note: Custom command that will be executed each time player state
@@ -323,7 +324,7 @@ visualizer_look = "$#"
 ## Note: You can specify third character which will be used to build 'empty'
 ## part of progressbar.
 ##
-#progressbar_look = =>
+progressbar_look = "=>"
 #
 ## Available values: database, playlist.
 ##
@@ -332,6 +333,7 @@ visualizer_look = "$#"
 ## Available values: classic, alternative.
 ##
 #user_interface = classic
+user_interface = "alternative"
 #
 #data_fetching_delay = yes
 #
@@ -361,9 +363,9 @@ visualizer_look = "$#"
 #
 #lyrics_fetchers = lyricwiki, azlyrics, genius, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
 #
-#follow_now_playing_lyrics = no
+follow_now_playing_lyrics = yes
 #
-#fetch_lyrics_for_current_song_in_background = no
+fetch_lyrics_for_current_song_in_background = yes
 #
 #store_lyrics_in_song_dir = no
 #
@@ -394,7 +396,7 @@ visualizer_look = "$#"
 ## media_library, playlist_editor, tag_editor, outputs, visualizer, clock,
 ## lyrics, last_fm.
 ##
-#screen_switcher_mode = playlist, browser
+# screen_switcher_mode = playlist, browser
 #
 ##
 ## Note: You can define startup screen by choosing screen from the list above.
@@ -423,7 +425,7 @@ startup_screen = browser
 #
 #clock_display_seconds = no
 #
-#display_volume_level = yes
+display_volume_level = yes
 #
 #display_bitrate = no
 #
@@ -520,7 +522,7 @@ startup_screen = browser
 #
 #header_window_color = default
 #
-#volume_color = default
+volume_color = default
 #
 #state_line_color = default
 #
