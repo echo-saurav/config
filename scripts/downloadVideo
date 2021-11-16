@@ -2,4 +2,6 @@
 
 notify-send "start downloading video" $1
 cd $videoDownloadDir
-youtube-dl  $1 ; notify-send "download completed!" "check $videoDownloadDir"
+
+youtube-dl --sub-lang en --convert-subs srt --write-sub --output "%(title)s.%(ext)s" -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]' --merge-output-format mp4 $videoUrl ; notify-send "Download completed!" "Check $videoDownloadDir"
+

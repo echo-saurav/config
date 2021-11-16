@@ -7,5 +7,3 @@ wal -i  $1
 $HOME/.config/polybar/launch.sh
 # reload i3
 i3-msg reload
-# change kitty colorshema
-cat $HOME/.cache/wal/sequences

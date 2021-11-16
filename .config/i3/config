@@ -263,6 +263,8 @@ exec --no-startup-id $HOME/scripts/syncYoutubePlaylist
 exec --no-startup-id ibus-daemon -drxR
 # music player daemon
 exec --no-startup-id mpd
+exec --no-startup-id mpd-mpris # playerctl + kde support
+
 
 ## Screen off time
 ## https://wiki.archlinux.org/title/Display_Power_Management_Signaling
@@ -282,8 +284,9 @@ for_window [class="floating_kitty"] floating enable,resize set 640px 480px,move 
 #for_window [class="kitty"] resize set 40ppt 40ppt
 
 # Specific workspace for programs
-assign [class="qutebrowser"]    $ws1
-assign [class="obsidian"]		$ws3
+assign [class="qutebrowser"]		$ws1
+assign [class="obsidian"]			$ws3
+assign [class="jetbrains-studio"]	$ws2
 
 # focus window when open and switch workspace if window is on other workspace
 #focus_on_window_activation focus

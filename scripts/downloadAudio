@@ -2,4 +2,6 @@
 
 notify-send "start downloading audio" $1
 cd $audioDownloadDir
-youtube-dl --extract-audio --audio-format mp3  $1 ; notify-send "download completed!" "check $audioDownloadDir"
+
+youtube-dl --metadata-from-title "%(artist)s - %(title)s - %(uploader)s" --add-metadata  --output "%(title)s.%(ext)s" --extract-audio --audio-format mp3 $audioUrl ; notify-send "download completed!" "check $audioDownloadDir"
+
