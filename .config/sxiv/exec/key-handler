@@ -53,6 +53,6 @@ case "$KEY" in
 "C-slash")  rotate 180 ;;
 "C-t")      tag_add ;;
 "M-T")      tag_del ;;
-"w")	while read file; do  wal -i "$file"; done ;;
+"w")	while read file; do  $HOME/scripts/changeWallpaper "$file"; done ;;
 esac
 
