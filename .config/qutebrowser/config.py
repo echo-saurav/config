@@ -22,7 +22,7 @@ c.downloads.remove_finished = 1
 c.fonts.completion.category = 'bold 10pt Victor Mono'
 c.hints.auto_follow_timeout = 0
 c.hints.chars = 'abcdefghijklmnopqrstuvwxyz'
-c.hints.find_implementation = 'javascript'
+c.hints.find_implementation = 'python'
 c.hints.mode = 'letter'    
 c.input.insert_mode.auto_load = True
 c.statusbar.widgets = ['keypress', 'url', 'progress']
@@ -33,15 +33,13 @@ c.tabs.new_position.related = 'last'
 c.tabs.position = 'bottom'
 c.tabs.select_on_remove = 'last-used'
 c.tabs.show = 'multiple'
+# Dark mode
 c.colors.webpage.darkmode.enabled=True
 c.colors.webpage.darkmode.algorithm="lightness-cielab"
 c.colors.webpage.darkmode.contrast=0.0
 c.colors.webpage.darkmode.policy.images="never"
 
-
 c.scrolling.smooth=True
-
-
 c.hints.leave_on_load = False
 
 c.url.default_page = 'file:///home/ironman/packages/root-startpage/index.html'
