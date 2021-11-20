@@ -29,7 +29,7 @@ then
 	fi
 fi	
 # increase brightness
-xrandr --output VGA-1 --brightness $new_brightness
+xrandr --output VGA1 --brightness $new_brightness
 echo $new_brightness 
 
 # change current value
