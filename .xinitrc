@@ -1,3 +1,4 @@
 # start window manager
-exec i3
+exec bspwm
+export _JAVA_AWT_WM_NONREPARENTING=1
 
