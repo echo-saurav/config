@@ -45,7 +45,7 @@ super + t
 
 # pick color from display
 super + c
-	~/scripts/colorPick.sh
+	~/scripts/pickColor
 
 #loop youtube
 super + r
