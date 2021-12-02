@@ -16,7 +16,7 @@ Plug 'vwxyutarooo/nerdtree-devicons-syntax'
 Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete code
 Plug 'Chiel92/vim-autoformat'
 Plug 'ap/vim-css-color'
-
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 
