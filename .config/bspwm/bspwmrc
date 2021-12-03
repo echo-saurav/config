@@ -58,7 +58,7 @@ picom &
 # set wallpaper
 wal -i $(cat ~/.cache/wal/wal) -o ~/scripts/setWal.sh &
 # status bar
-~/.config/polybar/launch.sh
+~/.config/polybar/launch.sh &
 # keyboard mouse speed
 #xset r rate 500 40
 # set curser  style to pointer
@@ -78,13 +78,13 @@ syncthing &
 # Activity watcher
 $HOME/scripts/activityWatcherStartup &
 # backup files to google drive
-$HOME/scripts/backup
+$HOME/scripts/backup &
 # sync youtube playlist
-$HOME/scripts/syncYoutubePlaylist
+$HOME/scripts/syncYoutubePlaylist &
 # ibus
-ibus-daemon -drxR
+ibus-daemon -drxR &
 # mpd kde support
-$HOME/scripts/mpdStartup
+$HOME/scripts/mpdStartup &
 ## Screen off time
 ## https://wiki.archlinux.org/title/Display_Power_Management_Signaling
 xset -dpms &
