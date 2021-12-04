@@ -64,7 +64,7 @@ super + minus
 
 # take screenshot
 super + @p
-	~/scripts/takeScreenshotWithRofi.sh
+	~/scripts/screenshot
 
 # rofi 
 super + x
