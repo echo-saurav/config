@@ -37,7 +37,7 @@ super + F8
 
 # my menu
 super + o
-	~/scripts/cpy
+	~/scripts/obsidianInbox
 
 # see resource useges
 super + t
