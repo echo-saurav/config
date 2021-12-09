@@ -4,3 +4,6 @@
 [submodule ".vim/plugin/aw-watcher-vim"]
 	path = .vim/plugin/aw-watcher-vim
 	url = https://github.com/ActivityWatch/aw-watcher-vim
+[submodule ".vim/plugin/coc.nvim"]
+	path = .vim/plugin/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
