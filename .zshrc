@@ -1,3 +1,14 @@
+# plugin manager
+source $HOME/.antigen.zsh
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+# load and install plugins
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+# Tell Antigen that you're done.
+antigen apply
+
 ZSH_CUSTOM="$HOME/.zshCustom/"
 #ZSH_THEME="robbyrussell" 
 ZSH_THEME="my-theme"
@@ -96,10 +107,9 @@ export UPDATE_ZSH_DAYS=13
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
 
+# ohmyzsh plugins
 plugins=(
 	sudo
-	zsh-autosuggestions
-	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
