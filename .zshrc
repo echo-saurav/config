@@ -1,3 +1,4 @@
+ZSH_CUSTOM="$HOME/.zshCustom/"
 #ZSH_THEME="robbyrussell" 
 ZSH_THEME="my-theme"
 
