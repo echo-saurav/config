@@ -89,6 +89,7 @@ $HOME/scripts/mpdStartup &
 ## https://wiki.archlinux.org/title/Display_Power_Management_Signaling
 xset -dpms &
 xset s off &
-
+# keyboard chattering
+xset r rate 700 25 
 
 
