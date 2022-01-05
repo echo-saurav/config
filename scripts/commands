@@ -30,3 +30,4 @@ check git remote =git config --get remote.origin.url
 clone minimal git repo without all the history =git clone --depth <depth> -b <branch> <repo_url>
 redirect error output =2>/dev/null
 list all packages =pacman -Qqe |less
+gif wallpaper =xwinwrap -ov -g 2060x1200+0+0 -- mpv -wid WID /home/ironman/qwe_download.gif --no-osc --no-osd-bar --loop-file --player-operation-mode=cplayer --no-audio --panscan=1.0 --no-keepaspect --no-input-default-bindings --hwdec&
