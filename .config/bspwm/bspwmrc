@@ -90,6 +90,6 @@ $HOME/scripts/mpdStartup &
 xset -dpms &
 xset s off &
 # keyboard chattering
-xset r rate 1200 70 
+#xset r rate 1200 70 
 
 
