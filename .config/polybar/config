@@ -13,7 +13,7 @@ include-file = $HOME/.config/polybar/usefulModules.ini
 include-file = $HOME/.config/polybar/windowManager.ini
 
 [bar/bottomBar]
-modules-left   = time cpu-tmp cpu memory 
+modules-left   = time cpu-tmp cpu memory filesystem
 modules-center =  
 modules-right  = i3 bspwm pulseaudio power
 

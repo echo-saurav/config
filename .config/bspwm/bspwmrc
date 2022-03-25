@@ -54,7 +54,7 @@ bspc rule -a Zathura state=tiled
 
 # Startup programs
 # transparency
-picom &	
+#picom &	
 # set wallpaper
 wal -i $(cat ~/.cache/wal/wal) -o ~/scripts/setWal.sh &
 # status bar
@@ -76,7 +76,7 @@ dunst &
 # start syning file with mobile
 syncthing &
 # Activity watcher
-$HOME/scripts/activityWatcherStartup &
+#$HOME/scripts/activityWatcherStartup &
 # backup files to google drive
 $HOME/scripts/backup &
 # sync youtube playlist
@@ -90,6 +90,6 @@ $HOME/scripts/mpdStartup &
 xset -dpms &
 xset s off &
 # keyboard chattering
-xset r rate 1200 70 
+#xset r rate 1200 70 
 
 
