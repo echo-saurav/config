@@ -92,4 +92,5 @@ xset s off &
 # keyboard chattering
 #xset r rate 1200 70 
 
-
+# start obsidian
+exec obsidian
